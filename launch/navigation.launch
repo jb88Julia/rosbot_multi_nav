@@ -1,0 +1,10 @@
+<launch>
+  <param name="/use_sim_time" value="true"/>
+
+    <arg name="map_file" default="$(find rosbot_multi_nav)/maps/maze_map.yaml"/>       <!-- path of map file -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" respawn="true" />
+
+
+  <node type="rviz" name="rviz" pkg="rviz"  />
+
+</launch>
