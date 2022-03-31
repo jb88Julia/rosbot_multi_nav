@@ -1,16 +1,16 @@
 <launch>
 
-  <arg name="use_map_topic"   default="false"/>
-  <arg name="scan_topic"      default="/robot3/scan"/>
+  <arg name="use_map_topic"   default="true"/>
+  <arg name="scan_topic"      default="robot2/scan"/>
   <arg name="initial_pose_x"  default="3.0"/>
   <arg name="initial_pose_y"  default="1.0"/>
   <arg name="initial_pose_z"  default="0.0"/>
   <!-- potential issue:-->
-  <arg name="odom_frame_id"   default="/robot3_tf/odom"/>
-  <arg name="base_frame_id"   default="/robot3_tf/base_footprint"/>
+  <arg name="odom_frame_id"   default="robot2_tf/odom"/>
+  <arg name="base_frame_id"   default="robot2_tf/base_link"/>
   <arg name="global_frame_id" default="/map"/>
 
-  <node pkg="amcl" type="amcl" name="robot3_amcl">
+  <node pkg="amcl" type="amcl" name="robot2_amcl">
     <param name="use_map_topic"             value="$(arg use_map_topic)"/>
     <!-- Publish scans from best pose at a max of 10 Hz -->
     <param name="odom_model_type"           value="diff-corrected"/>
@@ -48,11 +48,12 @@
     <param name="recovery_alpha_fast"       value="0.0"/>
     <param name="initial_pose_x"            value="$(arg initial_pose_x)"/>
     <param name="initial_pose_y"            value="$(arg initial_pose_y)"/>
-    <param name="initial_pose_z"            value="$(arg initial_pose_z)"/>
+    <param name="initial_pose_a"            value="$(arg initial_pose_z)"/>
     <remap from="scan"                      to="$(arg scan_topic)"/>
-    <remap from="initialpose"               to="/robot3/initialpose"/>
-    <remap from="amcl_pose"                 to="/robot3/amcl_pose"/>
-    <remap from="particlecloud"             to="/robot3/particlecloud"/>
+    <remap from="initialpose"               to="/robot2/initialpose"/>
+    <remap from="amcl_pose"                 to="/robot2/amcl_pose"/>
+    <remap from="particlecloud"             to="/robot2/particlecloud"/>
+
 
   </node>
 

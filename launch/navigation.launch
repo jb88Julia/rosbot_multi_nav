@@ -1,16 +1,16 @@
 <launch>
 
-  <arg name="r1_initial_pose_x"  />
-  <arg name="r1_initial_pose_y"  />
-  <arg name="r1_initial_pose_z"  />
+  <arg name="r1_initial_pose_x"  default="3"/>
+  <arg name="r1_initial_pose_y"  default="1"/>
+  <arg name="r1_initial_pose_z"  default="0"/>
 
-  <arg name="r2_initial_pose_x"  />
-  <arg name="r2_initial_pose_y"  />
-  <arg name="r2_initial_pose_z"  />
+  <arg name="r2_initial_pose_x"  default="-4"/>
+  <arg name="r2_initial_pose_y"  default="1"/>
+  <arg name="r2_initial_pose_z"  default="0"/>
 
-  <arg name="r3_initial_pose_x"  />
-  <arg name="r3_initial_pose_y"  />
-  <arg name="r3_initial_pose_z"  />
+  <arg name="r3_initial_pose_x"  default="1"/>
+  <arg name="r3_initial_pose_y"  default="-6"/>
+  <arg name="r3_initial_pose_z"  default="0"/>
 
   <param name="/use_sim_time" value="true"/>
 
