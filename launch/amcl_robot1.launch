@@ -24,6 +24,11 @@
     <param name="kld_z"                     value="0.99"/>
     <param name="odom_alpha1"               value="0.2"/>
     <param name="odom_alpha2"               value="0.2"/>
+    <!-- Parameters added from Luka's code-->
+    <param name="update_min_d" value="0.1"/>
+    <param name="update_min_a" value="0.2"/>
+    <param name="min_particles" value="500"/>
+    <!--    -->
     <!-- translation std dev, m -->
     <param name="odom_alpha3"               value="0.2"/>
     <param name="odom_alpha4"               value="0.2"/>
